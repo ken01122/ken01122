@@ -7,7 +7,8 @@ with open('yt_info.csv', "r", newline='') as csvfile:
     listReport = list(yt_info)
 
 for title, link in listReport:
-    title = title.replace('?', '').replace('|', '').replace('/', '').replace(':', '')
+    title = title.replace('\\', '').replace('/', '').replace(':', '').replace('*', '').replace('?', '')\
+        .replace('"', '').replace('<', '').replace('>', '').replace('|', '')
     path = (f'yt_trans_text/{title}.txt')
     with open(path, 'w', encoding='utf-8-sig') as f:
         try:
