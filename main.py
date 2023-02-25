@@ -15,7 +15,7 @@ for title, link in listReport:
             transcript_list = YouTubeTranscriptApi.get_transcript(link, languages=['zh-Hant', 'en'])
             for trans in transcript_list:
                 f.writelines(str(trans['text'] + ", start: " + str(trans['start']) + ", end: " + str(round(
-                    trans['start'] + trans['duration'])+'\n')))
+                    trans['start'] + trans['duration']))+'\n'))
         except:
             continue
 
